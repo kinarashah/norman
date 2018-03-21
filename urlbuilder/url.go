@@ -210,3 +210,7 @@ func parseResponseUrlBase(requestUrl string, r *http.Request) (string, error) {
 		return requestUrl[0:index], nil
 	}
 }
+
+func (u *urlBuilder) ActionLinkByID(schema *types.Schema, id string, action string) string {
+	return u.constructBasicUrl(schema.Version, schema.PluralName, id) + "?action=" + url.QueryEscape(action)
+}

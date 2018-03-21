@@ -106,6 +106,7 @@ type URLBuilder interface {
 	//Link(resource Resource, name string) string
 	//ReferenceLink(resource Resource) string
 	//ReferenceByIdLink(resourceType string, id string) string
+	ActionLinkByID(schema *Schema, id string, action string) string
 	Version(version string) string
 	ReverseSort(order SortOrder) string
 	SetSubContext(subContext string)
